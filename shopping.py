@@ -42,3 +42,14 @@ def orders():
     rows = cur.fetchall()
     conn.close()
     return render_template('orders.html', rows=rows)
+
+@app.route('/order_details/<id>')
+def order_details(id):
+    conn = sqlite3.connect(db_name)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    # get results from orders
+    cur.execute("select * from orders WHERE id=?", (id))
+    order = cur.fetchall()
+    conn.close()
+    return render_template('order_details.html', order=order)
