@@ -38,4 +38,44 @@ for i in range(10):
     cur.execute('INSERT INTO products VALUES(NULL,?,?,NULL)', (name, price))
     conn.commit()
 
+# create some carts 
+cur.execute('select * from products')
+products = cur.fetchall()
+product_id_list = []
+for product in products:
+    product_id_list.append(product[0])
+
+for i in range(10):
+    random_id = random.randint(1,9)
+    product_id = product_id_list[random_id]
+    quantity = random.randrange(1,42)
+    cur.execute('INSERT INTO carts VALUES(NULL,?,?,NULL)', (product_id, quantity))
+    conn.commit()
+
 # create orders from customers
+cur.execute('select * from customers')
+customers = cur.fetchall()
+for customer in customers:  
+    for i in range(3):
+        customer_id = customer[0]
+        # note that need trailing comma in the sql statement
+        cur.execute('INSERT INTO orders VALUES(NULL,?,NULL)', (customer_id,))
+        conn.commit()
+
+# attach line_items to orders
+cur.execute('select * from orders')
+orders = cur.fetchall()
+
+cur.execute('select * from carts')
+carts = cur.fetchall()
+
+for order in orders:
+    for cart in carts:
+        quantity = cart[2]
+        product_id = cart[1]
+        cart_id = cart[0]
+        order_id = order[0]
+        cur.execute('INSERT INTO line_items VALUES(NULL,?,?,?,?,NULL)', (product_id, quantity, cart_id, order_id))
+        conn.commit()
+    
+
