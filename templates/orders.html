@@ -1,0 +1,16 @@
+<head>
+    <title>Acme Shopping: Orders</title>
+  </head>
+  <body>
+   
+      <h1>Acme Shopping: Orders</h1>
+      
+      {% for row in rows %}
+      <p>Order: 
+         <b> <a href={{ url_for('order_details', id= row['id']) }}>{{row["id"]}}</a></b> |  
+         {{row["customer_id"]}} |
+          {{ row["created_at"]}} 
+      </p>
+      {% endfor %}
+  </body>
+  </html>

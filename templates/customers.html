@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Acme Shopping: Customers</title>
+</head>
+<body>
+ 
+    <h1>Acme Shopping: Customers</h1>
+    
+    {% for row in rows %}
+    <p>Customer: 
+       <b> <a href={{ url_for('customer_details', id= row['id']) }}>{{row["id"]}}</a></b> |  
+       {{row["name"]}} |
+        {{ row["email"]}} |
+       {{row['address']}}	
+    </p>
+    {% endfor %}
+</body>
+</html>
