@@ -32,7 +32,7 @@ You may want to refer to the setup_db.py file to better understand the database 
 
 You'll see that this version works with SQL queries and statements to manipulate the data we display on the page. This means we're working with the objects returned by the database, which are tuples, which have a specific structure, even when a single instance is returned. You can see this in the html pages that display the data. Look at this documentation page for more details https://docs.python.org/3/library/sqlite3.html
 
-Round one should be fixing the order_detail.html page to show names of items and customers, who placed the order. If you have time, then you can also fix the customer_details.html page to show the customer's orders, and let them click through to the order_details.html page.
-Round two should be creating a 'dashboard' page to show total orders ranked by customers.
-Round three is making round two work when you scale up the database by changing the numbers in the loops for the setup_db.py file to work with 50 customers and orders of 10 items per customer.
+1. Round one should be fixing the order_detail.html page to show names of items and customers, who placed the order. If you have time, then you can also fix the customer_details.html page to show the customer's orders, and let them click through to the order_details.html page.
+2. Round two should be creating a 'dashboard' page to show total orders ranked by customers.
+3. Round three is making round two work when you scale up the database by changing the numbers in the loops for the setup_db.py file to work with 50 customers and orders of 10 items per customer.
 Round four, would apply Python models to tuck the SQL away from the main application, and remove some of the duplication. 
