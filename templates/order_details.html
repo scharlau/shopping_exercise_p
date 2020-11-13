@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Acme Shopping: Order Details</title>
+</head>
+<body>
+ 
+    <h1>Acme Shopping: Order Details</h1>
+    
+    <p>order: 
+       <b> {{ order[0]["id"] }}</b> |  
+       Ordered by: {{ order[0]["customer_id"] }} |
+       On: {{ order[0]["created_at"] }} 	
+    </p>
+    <p>Customer: 
+      <b><a href={{ url_for('customer_details', id= customer[0]["id"]) }}>{{customer[0]["id"]}}</a></b> |  
+      {{ customer[0]["name"] }} |
+      On: {{ order[0]["created_at"] }} 	
+   </p>
+
+ 
+    <p>Details of line items in the order:</p>
+    {% for item in items %}
+    <p> 
+       <b> {{ item["id"] }}</b> |  
+       Product: {{ item["product_id"] }} |
+       Quantity: {{ item["quantity"] }} | 
+       Ordered at: {{ item["created_at"] }} 
+    </p>
+    {% endfor %}
+</body>
+</html>

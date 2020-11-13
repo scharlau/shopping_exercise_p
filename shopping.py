@@ -29,8 +29,12 @@ def customer_details(id):
     # get results from customers
     cur.execute("select * from customers WHERE id=?", (id))
     customer = cur.fetchall()
+    cur.execute("select * from orders WHERE customer_id=?", (id))
+    # we call this 'rows' instead of 'orders' as the later causes confusion in 
+    # call to order_details page, which has object called 'orders' too
+    rows = cur.fetchall()
     conn.close()
-    return render_template('customer_details.html', customer=customer)
+    return render_template('customer_details.html', customer=customer, rows=rows)
 
 @app.route('/orders')
 def orders():
@@ -51,5 +55,10 @@ def order_details(id):
     # get results from orders
     cur.execute("select * from orders WHERE id=?", (id))
     order = cur.fetchall()
+    customer_id = order[0]['customer_id']
+    cur.execute("select * from customers WHERE id=?", (customer_id,))
+    customer = cur.fetchall()
+    cur.execute("select * from line_items WHERE order_id=?", (id))
+    items = cur.fetchall()
     conn.close()
-    return render_template('order_details.html', order=order)
+    return render_template('order_details.html', order=order, items=items, customer=customer)

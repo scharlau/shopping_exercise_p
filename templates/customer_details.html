@@ -12,7 +12,14 @@
         {{ customer[0]["email"]}} |
        {{customer[0]['address']}}	
     </p>
-  <p>Modify the method to also supply the customer's orders</p>
-    <p>Details of orders for {{customer[0]["name"]}}:</p>
+  <p>Modify the method to also supply the customer's rows</p>
+    <p>Details of rows for {{customer[0]["name"]}}:</p>
+
+    {% for row in rows %}
+    <p> 
+      Order: <a href={{ url_for('order_details', id= row['id']) }}>{{row["id"]}}</a></b>  |  
+       Ordered on: {{ row["created_at"] }} 
+    </p>
+    {% endfor %}
 </body>
 </html>
