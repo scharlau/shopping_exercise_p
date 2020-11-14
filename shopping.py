@@ -8,6 +8,11 @@ db_name = 'shopping_data.db'
 
 @app.route('/')
 def index():
+    # to do the dashboard of total orders and price, plus amount spent by customers, we need to 
+    # loop through all orders to get customer_id, which we can look up, and for each order retrieve all line items,
+    # and then loop through all line items to retrieve product_id and then look up
+    # product price and then total this with quantity
+    # as we find the value we want from each item, we can put that into a list, or maybe dictionary, to use in the dashboard
     return render_template('index.html')
 
 @app.route('/customers')
