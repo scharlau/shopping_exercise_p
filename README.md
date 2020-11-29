@@ -11,7 +11,7 @@ We can now add in some random content for the shopping application using the Fak
 
         pip install Faker
 
-Now we can set about changing the nouns, adjectives and other parts of mystory with values from Faker. Go to https://faker.readthedocs.io/en/stable/providers.html and look through the options for Standard Providers to see if you want to change any details in values used in setup_db.py.
+Now we can use Faker to generate customer and product details in the in the 'setup_db.py' file. Go to https://faker.readthedocs.io/en/stable/providers.html and look through the options for Standard Providers to see if you want to change any details in values used.
 
 ## Setting up the Exercise
 Pull this Git repository into your system so that you have everything to get started.
@@ -20,7 +20,7 @@ Run the setup_db.py file to create the tables, and load the generated data into 
 
 Load the application settings into your terminal and start the server with 
 
-        export FLASK_APP=?????.py 
+        export FLASK_APP=shopping.py 
         export FLASK_ENV=development
         python3 -m flask run 
 
