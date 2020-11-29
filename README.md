@@ -11,7 +11,7 @@ We can now add in some random content for the shopping application using the Fak
 
         pip install Faker
 
-Now we can set about changing the nouns, adjectives and other parts of mystory with values from Faker. Go to https://faker.readthedocs.io/en/stable/providers.html and look through the options for Standard Providers to see if you want to change any details in values used in setup_db.py.
+Now we can use Faker to generate customer and product details in the in the 'setup_db.py' file. Go to https://faker.readthedocs.io/en/stable/providers.html and look through the options for Standard Providers to see if you want to change any details in values used.
 
 ## Setting up the Exercise
 Pull this Git repository into your system so that you have everything to get started.
@@ -20,7 +20,7 @@ Run the setup_db.py file to create the tables, and load the generated data into 
 
 Load the application settings into your terminal and start the server with 
 
-        export FLASK_APP=?????.py 
+        export FLASK_APP=shopping.py 
         export FLASK_ENV=development
         python3 -m flask run 
 
@@ -28,13 +28,13 @@ Load the application settings into your terminal and start the server with
 
 Work through the three rounds with a partner, or on your own, depending upon your circumstances. Each round should be twelve minutes, followed by a discussion of where you are and what has been working, as well as, what you're working on next.
 
-You may want to refer to the setup_db.py file to better understand the database schema before you get started. Some of you might even want to diagram the schema. You might also want to spend a few minutes at the start of each round planning what you might want to do.
+You may want to refer to the setup_db.py file to understand the database schema before you get started. Some of you might even want to diagram the schema. 
 
-You'll see that this version works with SQL queries and statements to manipulate the data we display on the page. This means we're working with the objects returned by the database, which are tuples, which have a specific structure, even when a single instance is returned. You can see this in the html pages that display the data. Look at this documentation page for more details https://docs.python.org/3/library/sqlite3.html
+You might also want to spend a few minutes at the start of each round planning what you might want to do.
+
+You'll see that this version works with SQL queries and statements to manipulate the data we display on the page. This means we're working with tuples returned to us from the database, which force us to do things in certain ways. You can see this in the html pages that display the data. Look at the SQL python documentation page for more details https://docs.python.org/3/library/sqlite3.html
 
 1. Round one should be fixing the order_detail.html page to show names of items and customers, who placed the order. If you have time, then you can also fix the customer_details.html page to show the customer's orders, and let them click through to the order_details.html page.
 2. Round two should be creating a 'dashboard' page to show total orders ranked by customers.
 3. Round three is making round two work when you scale up the database by changing the numbers in the loops for the setup_db.py file to work with 50 customers and orders of 10 items per customer.
-4. Round four, would apply Python models to tuck the SQL away from the main application, and remove some of the duplication. This might be best done using Flask SQLAlchemy an object-relational-mapping library https://flask-sqlalchemy.palletsprojects.com/en/2.x/ This isn't in the solution.
-
-In the solution branch you'll find some of round one, a note about round two, and the start of round four, with tucking the SQL away. Only look at these files after you've tried your own solution.
+4. Round four, would apply Python models to tuck the SQL away from the main application, and remove some of the duplication. 
