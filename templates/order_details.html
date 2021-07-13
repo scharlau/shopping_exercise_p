@@ -1,8 +1,5 @@
-<html>
-<head>
-  <title>Acme Shopping: Order Details</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
  
     <h1>Acme Shopping: Order Details</h1>
     
@@ -27,5 +24,4 @@
        Ordered at: {{ item["created_at"] }} 
     </p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

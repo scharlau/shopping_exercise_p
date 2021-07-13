@@ -1,7 +1,5 @@
-<head>
-    <title>Acme Shopping: Orders</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+{% block content %}
    
       <h1>Acme Shopping: Orders</h1>
       
@@ -12,5 +10,4 @@
           {{ row["created_at"]}} 
       </p>
       {% endfor %}
-  </body>
-  </html>
+  {% endblock %}

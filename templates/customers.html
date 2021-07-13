@@ -1,8 +1,6 @@
 <html>
-<head>
-  <title>Acme Shopping: Customers</title>
-</head>
-<body>
+  {% extends "base.html" %}
+  {% block content %}
  
     <h1>Acme Shopping: Customers</h1>
     
@@ -14,5 +12,4 @@
        {{row['address']}}	
     </p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

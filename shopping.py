@@ -74,3 +74,14 @@ def order_details(id):
     cur = db.execute("select * from line_items WHERE order_id=?", (id))
     items = cur.fetchall()
     return render_template('order_details.html', order=order, items=items, customer=customer)
+
+@app.route('/products')
+def products():
+    db = get_db()
+    # get results from products
+    cur = db.execute("select * from products")
+    rows = cur.fetchall()
+    return render_template('products.html', rows=rows)
+
+if __name__ == "__main__":
+    app.run(debug=True)

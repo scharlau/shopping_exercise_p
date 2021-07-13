@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+      <h1>Acme Shopping: Products</h1>
+      
+      {% for row in rows %}
+      <p>Products: 
+         <b> {{row["id"]}}</b> |  
+         {{row["name"]}} |
+         {{ row["price"]}} |
+         {{ row["created_at"]}} 
+      </p>
+      {% endfor %}
+{% endblock %}
