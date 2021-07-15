@@ -1,11 +1,13 @@
-# Shopping Exercise in Python with Flask and Sqlite3
+# Shopping Exercise in Python with Flask, Sqlite3 and SQLAlchemy
 A shopping example in python as a deliberate practice exercise
 
-## Historical solution version 
+## Background
 
-This is an old version done without any authentication in order to show how you might manage the templates, the controller, and without models by using raw SQL statements. I found that in order to add authentication, the app would need to move to using SQLAlchemy as some of the other flask components need to have a user model. That means this is now just an old version saved as a reference.
+This version uses basic bootstrap https://getbootstrap.com for styling and other flask extensions in order to highlight their implementation. This means the application has more folders and files than other examples.
 
-This is NOT a proper shopping site, but an example of how one could be done. The purpose of this is to let you explore how you retrieve and display the information that you want to show on the pages of the site.
+The main launching file, shopping.py is mostly empty, and calls code in the app/__ini__.py file. While you might think the database needs to be in the 'app' folder, this is not the case. It needs to be in the root folder given its current path.
+
+This is NOT a proper shopping site, but an example of how one could be done. The purpose of this is to let you explore how you retrieve and display the information that you want to show on the pages of the site. That means the page styling is minimal, whatever bootstrap provides 'out of the box'.
 
 The goal of 'deliberate practice' is to think about how you'd solve this challenge, and to work at developing code to make this work. There is no single 'correct' version of this code. The purpose of the exercise it become familiar with different ways of making the application work. You should explore how this simple application is done in Rails so that you understand how variables in controllers are show up in the views you see in the browser.
 
