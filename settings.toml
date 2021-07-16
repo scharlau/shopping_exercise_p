@@ -1,0 +1,15 @@
+# add stuff here for configuration
+# use .secrets.toml for config details that should not be put into repository
+
+[default]
+
+[development]
+flask_debug= true
+extensions=["flask_debugtoolbar:DebugToolbarExtension"]
+debug_tb_enabled = true
+debug_tb_intercept_redirects = false
+logging_level = "DEBUG"
+
+[production]
+flask_debug = false
+logging_level = "INFO"
